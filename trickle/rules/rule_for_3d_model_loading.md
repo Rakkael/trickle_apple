@@ -1,0 +1,17 @@
+When user reports 3D model loading errors or display issues
+- Always check the model URL accessibility and CORS settings first
+- Ensure Three.js and GLTFLoader are properly loaded before initialization
+- Use unpkg.com CDN instead of cdn.jsdelivr.net for better reliability
+- Implement GLTFLoader availability checks with retry mechanisms
+- Wait for Three.js to be fully loaded before accessing GLTFLoader
+- Add setTimeout fallbacks for GLTFLoader initialization
+- Implement multiple fallback models in order of preference
+- Add comprehensive error handling with retry mechanisms
+- Provide clear loading status and error messages to users
+- Use progressive retry delays to handle network issues
+- Show network status and retry count for transparency
+- Test model loading with different file formats (GLB, GLTF, OBJ)
+- When user reports perspective distortion issues, adjust field-of-view (reduce to 20-35deg), increase camera distance, and use more frontal viewing angles
+- When user reports see-through or transparency issues with 3D models, set material opacity to 1.0, disable transparency, use DoubleSide rendering, and add disable-transparency attribute to model-viewer
+- Always update README.md when model loading logic changes
+- Always update README.md when model loading logic changes

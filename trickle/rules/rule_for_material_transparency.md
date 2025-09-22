@@ -1,0 +1,11 @@
+When user reports see-through or transparency issues with 3D vehicle models
+- Force all materials to complete opacity (opacity = 1.0, transparent = false)
+- Disable alpha testing and alpha maps (alphaTest = 0.0, alphaMap = null)
+- Use FrontSide rendering instead of DoubleSide to prevent depth conflicts
+- Enable proper depth testing and writing (depthTest = true, depthWrite = true)
+- Limit metalness values to prevent over-reflective surfaces (metalness ≤ 0.8)
+- Ensure minimum roughness to avoid mirror-like effects (roughness ≥ 0.1)
+- Reduce shadow intensity below 0.3 to prevent transparency artifacts
+- Use commerce tone-mapping instead of aces for more solid appearance
+- Set renderOrder = 0 and enable frustumCulled for proper geometry rendering
+- Always update README.md when transparency fixes are implemented
