@@ -13,5 +13,12 @@ When user reports 3D model loading errors or display issues
 - Test model loading with different file formats (GLB, GLTF, OBJ)
 - When user reports perspective distortion issues, adjust field-of-view (reduce to 20-35deg), increase camera distance, and use more frontal viewing angles
 - When user reports see-through or transparency issues with 3D models, set material opacity to 1.0, disable transparency, use DoubleSide rendering, and add disable-transparency attribute to model-viewer
-- Always update README.md when model loading logic changes
+- Always include multiple reliable fallback models from trusted sources like threejs.org examples
+- Implement automatic retry with exponential backoff for failed model loads
+- Use proper error message extraction from model-viewer error events (event.detail)
+- Display loading progress and fallback status to users with manual retry option
+- When encountering "[object Object]" errors, implement detailed error logging and graceful fallback mechanisms
+- Use reliable model sources: threejs.org examples, KhronosGroup glTF samples, and verified CDN models
+- Implement loading progress indicators and model index tracking for user feedback
+- Always provide manual retry buttons for failed model loads
 - Always update README.md when model loading logic changes

@@ -5,8 +5,8 @@ A modern, multi-product showcase website featuring Apple Vision Pro as the main 
 ## Features
 
 ### Multi-Product Showcase
-- **Apple Vision Pro (Main Page)**: Interactive spatial computing device showcase with realistic lighting
-- **Apple Watch SE 2022 Section**: Interactive 3D watch display with material variants on dedicated page
+- **Apple Watch SE 2022 (Main Page)**: Interactive 3D watch display with material variants and color options
+- **Apple Vision Pro Section**: Interactive spatial computing device showcase with realistic lighting on dedicated page
 - **iPhone 15 Pro Section**: Placeholder page for future 3D model integration
 - **iPad Pro Section**: Placeholder page for future 3D model integration  
 - **MacBook Pro Section**: Placeholder page for future 3D model integration
@@ -76,18 +76,18 @@ If you encounter "GLTFLoader not available" errors:
 
 ## Usage
 
-### Apple Watch Section
+### Apple Watch Section (Homepage)
 1. **Viewing the Apple Watch**: The 3D model loads automatically on page load
 2. **Rotation**: Click and drag to rotate the watch 360°
 3. **Zooming**: Use mouse wheel to zoom in/out for detail viewing
 4. **Band Color Selection**: Click color options to see different band colors (Silver, Space Black, Gold, Ocean Blue)
-5. **Navigation**: Click the down arrow or scroll to navigate to Vision Pro section
+5. **Navigation**: Use top navigation bar to switch between products
 
-### Apple Vision Pro Section
-1. **Dedicated Page Experience**: Full-screen white theme consistent with Apple design language
+### Apple Vision Pro Section (Dedicated Page)
+1. **Dedicated Page Experience**: Full-screen theme consistent with Apple design language
 2. **Interactive 3D Model**: Full 360° rotation and zoom capabilities with spatial computing device
-3. **Realistic Lighting System**: Optimized exposure (0.8), soft shadows (0.4 intensity, 0.8 softness) for natural appearance
-4. **Professional 3D Rendering**: Advanced lighting setup with neutral tone-mapping and reduced environment intensity (0.7)
+3. **Realistic Lighting System**: Optimized exposure (0.5), soft shadows (0.6 intensity, 0.8 softness) for natural appearance
+4. **Professional 3D Rendering**: Advanced lighting setup with neutral tone-mapping and reduced environment intensity (0.4)
 5. **Click Animation**: Interactive model animations triggered by user interaction
 6. **Mobile Support**: Touch gestures supported on all devices with responsive design
 
@@ -127,6 +127,14 @@ max-camera-orbit="auto auto 6m"
 field-of-view="20deg"
 ```
 
+## Development Setup
+
+For local development with modern tooling, see [README-DEVELOPMENT.md](../README-DEVELOPMENT.md) for:
+- Node.js setup with Vite
+- Hot reload development server
+- Modern build pipeline
+- Package management
+
 ## Browser Support
 
 - Chrome/Edge 88+
@@ -136,8 +144,14 @@ field-of-view="20deg"
 
 ## Performance
 
-- Optimized for detailed 3D watch models
+- Optimized for detailed 3D models
 - Efficient model loading and caching
 - Responsive design for various screen sizes
 - Hardware-accelerated WebGL rendering
 - 60fps target performance
+
+## Deployment Options
+
+1. **Trickle Platform** - Direct deployment (current)
+2. **Local Development** - Modern Node.js setup with Vite
+3. **Static Hosting** - Deploy built files to any CDN/hosting service
