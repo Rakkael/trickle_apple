@@ -55,10 +55,10 @@ function App() {
       <header className="absolute top-0 left-0 right-0 z-10 pt-32 p-6 fade-in">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-4xl md:text-6xl font-display font-light text-center text-gradient mb-2">
-            Apple Watch SE
+          3D 纪念品
           </h1>
           <p className="text-lg font-medium text-[var(--text-secondary)] text-center tracking-wide">
-            Heavy on features. Light on price.
+          超越平面，珍藏温度。​
           </p>
         </div>
       </header>
