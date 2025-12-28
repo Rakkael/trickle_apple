@@ -13,11 +13,11 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: './index.html',
-        watch: './watch.html',
-        iphone: './iphone.html',
-        ipad: './ipad.html',
-        macbook: './macbook.html',
-        visionpro: './vision-pro.html'
+        solidSeries: './solid-series.html',
+        soundLight: './sound-light-aesthetics.html',
+        qualityMaterials: './quality-materials.html',
+        auxiliaryMaterials: './auxiliary-materials.html',
+        productionConsultation: './production-consultation.html'
       }
     }
   }

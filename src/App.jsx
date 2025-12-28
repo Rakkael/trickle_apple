@@ -1,11 +1,13 @@
 import React from 'react'
 import LoadingScreen from './components/LoadingScreen'
-import ColorSelector from './components/ColorSelector'
-import ProductViewer from './components/ProductViewer'
 
-function App() {
+function App({
+  children,
+  title,
+  subtitle,
+  footerText = '拖动旋转 • 滚动缩放'
+}) {
   const [isLoading, setIsLoading] = React.useState(true)
-  const [selectedColor, setSelectedColor] = React.useState('silver')
 
   React.useEffect(() => {
     const timer = setTimeout(() => {
@@ -18,12 +20,16 @@ function App() {
     window.location.href = `/${page}.html`
   }
 
-  const handleColorChange = (color) => {
-    setSelectedColor(color)
-  }
-
   if (isLoading) {
     return <LoadingScreen />
+  }
+
+  const getLinkClass = (path) => {
+    const currentPath = window.location.pathname
+    // Check if the current path matches the link path (ignoring .html extension for robustness if needed, but strict match is fine for now)
+    // Also handle root path '/' for solid-series if that's the default
+    const isActive = currentPath.includes(path) || (path === 'solid-series' && (currentPath === '/' || currentPath === '/index.html'))
+    return `nav-item cursor-pointer${isActive ? ' active text-black' : ''}`
   }
 
   return (
@@ -38,11 +44,11 @@ function App() {
               <div className="icon-apple text-lg"></div>
             </a>
             <div className="flex items-center space-x-8">
-              <span className="nav-item active">Watch</span>
-              <span className="nav-item" onClick={() => handleNavigation('vision-pro')}>Vision</span>
-              <span className="nav-item" onClick={() => handleNavigation('iphone')}>iPhone</span>
-              <span className="nav-item" onClick={() => handleNavigation('ipad')}>iPad</span>
-              <span className="nav-item" onClick={() => handleNavigation('macbook')}>Mac</span>
+              <span className={getLinkClass('solid-series')} onClick={() => handleNavigation('solid-series')}>立体系列</span>
+              <span className={getLinkClass('sound-light-aesthetics')} onClick={() => handleNavigation('sound-light-aesthetics')}>声光美学</span>
+              <span className={getLinkClass('quality-materials')} onClick={() => handleNavigation('quality-materials')}>优质原料</span>
+              <span className={getLinkClass('auxiliary-materials')} onClick={() => handleNavigation('auxiliary-materials')}>辅助材料</span>
+              <span className={getLinkClass('production-consultation')} onClick={() => handleNavigation('production-consultation')}>生产咨询</span>
             </div>
             <div className="flex items-center space-x-4">
               <div className="icon-search text-lg text-[#1d1d1f] cursor-pointer hover:opacity-70 transition-opacity"></div>
@@ -54,29 +60,26 @@ function App() {
 
       <header className="absolute top-0 left-0 right-0 z-10 pt-32 p-6 fade-in">
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-display font-light text-center text-gradient mb-2">
-          3D 纪念品
-          </h1>
-          <p className="text-lg font-medium text-[var(--text-secondary)] text-center tracking-wide">
-          超越平面，珍藏温度。​
-          </p>
+          {title && (
+            <h1 className="text-4xl md:text-6xl font-display font-light text-center text-gradient mb-2">
+              {title}
+            </h1>
+          )}
+          {subtitle && (
+            <p className="text-lg font-medium text-[var(--text-secondary)] text-center tracking-wide">
+              {subtitle}
+            </p>
+          )}
         </div>
       </header>
 
       <div className="absolute inset-0 flex items-center justify-center">
-        <ProductViewer selectedColor={selectedColor} />
-      </div>
-
-      <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 z-10 fade-in">
-        <ColorSelector 
-          selectedColor={selectedColor} 
-          onColorChange={handleColorChange} 
-        />
+        {children}
       </div>
 
       <div className="fixed bottom-8 left-0 right-0 z-10 fade-in">
         <p className="text-sm font-medium text-[var(--text-secondary)] text-center tracking-wide mx-auto">
-          Drag to rotate • Scroll to zoom
+          {footerText}
         </p>
       </div>
     </div>
