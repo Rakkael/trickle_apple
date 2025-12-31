@@ -1,0 +1,2 @@
+import{c as t,j as e,R as r,A as i,P as o}from"./ProductViewer-DMS9pA9q.js";t(document.getElementById("root")).render(e.jsx(r.StrictMode,{children:e.jsx(i,{title:"生产咨询",subtitle:"专业团队，全程服务。",features:[{title:"解决复杂生产定制问题",description:"提供专业的技术咨询与解决方案。",imagePlaceholder:"技术咨询"},{title:"联系方式",description:"随时待命，期待您的来电。",imagePlaceholder:"联系我们"}],children:e.jsx(o,{})})}));
+//# sourceMappingURL=productionConsultation-fj9N-0rL.js.map
