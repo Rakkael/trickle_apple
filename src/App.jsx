@@ -5,6 +5,7 @@ function App({
   children,
   title,
   subtitle,
+  features,
   footerText = '拖动旋转 • 滚动缩放'
 }) {
   const [isLoading, setIsLoading] = React.useState(true)
@@ -76,6 +77,24 @@ function App({
       <div className="absolute inset-0 flex items-center justify-center">
         {children}
       </div>
+
+      {features && features.length > 0 && (
+        <div className="absolute top-1/2 left-8 md:left-16 transform -translate-y-1/2 z-20 pointer-events-none fade-in">
+          <div className="space-y-6">
+            {features.map((feature, index) => (
+              <div
+                key={index}
+                className="bg-white/10 backdrop-blur-md border border-white/20 px-6 py-4 rounded-xl shadow-lg transform transition-all duration-700 pointer-events-auto hover:scale-105 hover:bg-white/20"
+                style={{ transitionDelay: `${index * 150}ms` }}
+              >
+                <p className="text-lg md:text-xl font-medium text-[#1d1d1f] tracking-tight">
+                  {feature}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       <div className="fixed bottom-8 left-0 right-0 z-10 fade-in">
         <p className="text-sm font-medium text-[var(--text-secondary)] text-center tracking-wide mx-auto">

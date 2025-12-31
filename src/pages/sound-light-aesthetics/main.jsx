@@ -9,6 +9,11 @@ createRoot(document.getElementById('root')).render(
     <App
       title="声光美学"
       subtitle="光影流转，声随心动。"
+      features={[
+        "语音/遥控灯光",
+        "炫彩拾音律动",
+        "电子交互纪念品"
+      ]}
     >
       <ProductViewer />
     </App>
