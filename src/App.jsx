@@ -79,15 +79,22 @@ function App({
       </div>
 
       {features && features.length > 0 && (
-        <div className="absolute top-1/2 left-8 md:left-16 transform -translate-y-1/2 z-20 pointer-events-none fade-in">
-          <div className="space-y-6">
+        <div className="absolute top-1/2 left-8 md:left-24 transform -translate-y-1/2 z-20 pointer-events-none fade-in">
+          <div className="space-y-8">
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="bg-white/10 backdrop-blur-md border border-white/20 px-6 py-4 rounded-xl shadow-lg transform transition-all duration-700 pointer-events-auto hover:scale-105 hover:bg-white/20"
+                className="group relative pb-2 pointer-events-auto cursor-default"
                 style={{ transitionDelay: `${index * 150}ms` }}
               >
-                <p className="text-lg md:text-xl font-medium text-[#1d1d1f] tracking-tight">
+                {/* Visual Anchor Line (Bottom) */}
+                <div className="absolute bottom-0 left-0 w-24 h-[1px] bg-gradient-to-r from-gray-500/30 to-transparent transition-all duration-700 ease-out group-hover:w-full group-hover:from-gray-800/60"></div>
+
+                {/* Hover Glow Effect (Shining up from bottom) */}
+                <div className="absolute bottom-[-10px] -left-8 -right-8 h-16 bg-gradient-to-t from-white/20 to-transparent blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out pointer-events-none"></div>
+
+                {/* Text */}
+                <p className="text-xl md:text-2xl font-light text-[#1d1d1f] tracking-wide pl-1 relative z-10 transition-transform duration-500 group-hover:translate-x-1">
                   {feature}
                 </p>
               </div>
