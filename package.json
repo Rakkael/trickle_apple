@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "Interactive 3D Product Showcase with React and Three.js",
   "main": "index.js",
-  "homepage": "https://yourusername.github.io/3d-product-showcase",
+  "homepage": "https://Rakkael.github.io/trickle_apple",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/3d-product-showcase.git"
+    "url": "https://github.com/Rakkael/trickle_apple.git"
   },
   "bugs": {
     "url": "https://github.com/yourusername/3d-product-showcase/issues"
